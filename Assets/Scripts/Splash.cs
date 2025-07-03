@@ -11,10 +11,9 @@ public class Splash : MonoBehaviour
 {
     private IEnumerator Start()
     {
-        {
+       
             SharedUIManager.ConsentPanel.Show();
             yield return new WaitUntil(() => !SharedUIManager.ConsentPanel.Showing);
-        }
 
         GameManager.LoadScene("MainMenu");
     }

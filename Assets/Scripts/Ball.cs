@@ -1,4 +1,8 @@
-﻿using System.Collections;
+﻿// /*
+// Created by Darsan
+// */
+
+using System.Collections;
 using UnityEngine;
 
 public class Ball : MonoBehaviour
@@ -48,6 +52,11 @@ public class Ball : MonoBehaviour
         }
     }
 
+    //    public void Move(Vector2 target)
+    //    {
+    //        StopAllCoroutines();
+    //        StartCoroutine(MoveBallEnumerator(target));
+    //    }
 
     public void Move(params Vector2[] targetPath)
     {

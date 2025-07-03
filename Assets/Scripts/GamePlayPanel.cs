@@ -34,14 +34,15 @@ public class GamePlayPanel : ShowHidable
 
     public void OnClickSkip()
     {
-       
+      
+
         SharedUIManager.PopUpPanel.ShowAsConfirmation("Skip","Watch Video to skip this level", success =>
         {
             if(!success)
                 return;
 
-          
-           
+         
+            
                 ResourceManager.CompleteLevel(LevelManager.Instance.GameMode, LevelManager.Instance.Level.no);
                 UIManager.Instance.LoadNextLevel();
           
