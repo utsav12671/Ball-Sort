@@ -28,7 +28,6 @@ public class ConsentPanel : ShowHidable
 
     public void OnClickNo()
     {
-   
         Hide();
     }
 }

@@ -14,19 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _iosAppId: 
   _inAppSetting:
-    enable: 1
-    removeAdsId: com.bubblenoads
+    enable: 0
+    removeAdsId: com.DefaultCompany.BallSort
   _adsSettings:
-    iosUnityAppId: 3451276
-    androidUnityAppId: 3451277
+    iosUnityAppId: 5890603
+    androidUnityAppId: 5890602
     iosAdmobSetting:
-      enable: 1
+      enable: 0
       interstitialId: ca-app-pub-3940256099942544/4411468910
       admobRewardedId: ca-app-pub-3940256099942544/1712485313
     androidAdmobSetting:
-      enable: 1
-      interstitialId: ca-app-pub-3940256099942544/1033173712
-      admobRewardedId: ca-app-pub-3940256099942544/5224354917
+      enable: 0
+      interstitialId: 'ca-app-pub-3940256099942544~3347511713 '
+      admobRewardedId: 'ca-app-pub-3940256099942544~3347511713 '
     minAndMaxGameOversBetweenInterstitialAds: {x: 0, y: 1}
     minAndMaxGameOversBetweenVideoAds: {x: 0, y: 0}
     videoAdsFrequency: 0
