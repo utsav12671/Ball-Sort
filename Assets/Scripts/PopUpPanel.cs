@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class PopUpPanel : ShowHidable
+public class PopUpPanel : MonoBehaviour
 {
     [SerializeField] private Text _titleTxt;
     [SerializeField] private Text _messageTxt;
@@ -40,21 +40,10 @@ public class PopUpPanel : ShowHidable
 
     private void OnClickButton(Action action = null)
     {
-        Hide();
+        //Hide();
         action?.Invoke();
     }
 
-    public override void Show(bool animate = true, Action completed = null)
-    {
-        //SharedUIManager.Blur = true;
-        base.Show(animate, completed);
-    }
-
-    public override void Hide(bool animate = true, Action completed = null)
-    {
-        //SharedUIManager.Blur = false;
-        base.Hide(animate, completed);
-    }
 
     public void ShowAsConfirmation(string title, string message, Action<bool> callback = null)
     {
@@ -83,7 +72,7 @@ public class PopUpPanel : ShowHidable
                 }
             }
         };
-        Show();
+        //Show();
     }
 
     public void ShowAsInfo(string title, string message, Action onClose = null)
@@ -105,7 +94,7 @@ public class PopUpPanel : ShowHidable
 
             }
         };
-        Show();
+        //Show();
     }
 
     public struct ViewModel

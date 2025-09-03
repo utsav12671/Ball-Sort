@@ -1,4 +1,6 @@
-﻿public class RatingPopUp : ShowHidable
+﻿
+using UnityEngine;
+public class RatingPopUp : MonoBehaviour
 {
     public const int MIN_GAME_COUNT_AT_START = 5;
     public const int MIN_GAME_COUNT_AFTER_LATER = 50;
@@ -9,18 +11,18 @@
         set { PrefManager.SetInt("Rating_" + nameof(NEXT_MIN_COUNT),value); }
     }
 
-    public static bool Available => !RatingButton.Rated && NEXT_MIN_COUNT < MyGame.GameManager.TOTAL_GAME_COUNT;
+    public static bool Available => !RatingButton.Rated && NEXT_MIN_COUNT < GameManager.TOTAL_GAME_COUNT;
 
 
     public void OnClickRate()
     {
         RatingButton.OpenUrl();
-        Hide();
+        //Hide();
     }
 
     public void OnClickLater()
     {
-        NEXT_MIN_COUNT = MyGame.GameManager.TOTAL_GAME_COUNT + MIN_GAME_COUNT_AFTER_LATER;
-        Hide();
+        NEXT_MIN_COUNT = GameManager.TOTAL_GAME_COUNT + MIN_GAME_COUNT_AFTER_LATER;
+        //Hide();
     }
 }

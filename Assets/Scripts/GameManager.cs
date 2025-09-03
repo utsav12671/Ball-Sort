@@ -1,12 +1,7 @@
-﻿using System;
-using UnityEngine;
-
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
-namespace MyGame
-{
-
-    public partial class GameManager : Singleton<GameManager>
+    public partial class GameManager : MonoBehaviour
     {
         public static int TOTAL_GAME_COUNT
         {
@@ -17,27 +12,23 @@ namespace MyGame
         public static LoadGameData LoadGameData { get; set; }
 
 
-        protected override void OnInit()
+        protected  void OnInit()
         {
-            base.OnInit();
             Application.targetFrameRate = 60;
         }
     }
 
     public partial class GameManager
     {
+        
+
         // ReSharper disable once FlagArgument
         public static void LoadScene(string sceneName, bool showLoading = true, float loadingScreenSpeed = 5f)
         {
-            var loadingPanel = SharedUIManager.LoadingPanel;
-            if (showLoading && loadingPanel != null)
+            if (showLoading)
             {
-                loadingPanel.Speed = loadingScreenSpeed;
-                loadingPanel.Show(completed: () =>
-                {
+            
                     SceneManager.LoadScene(sceneName);
-                    loadingPanel.Hide();
-                });
             }
             else
             {
@@ -53,7 +44,7 @@ namespace MyGame
         }
 
     }
-}
+
 
 public struct LoadGameData
 {

@@ -1,14 +1,10 @@
-﻿// /*
-// Created by Darsan
-// */
-
+﻿
 using System;
-using Game;
-using MyGame;
 using UnityEngine;
 using UnityEngine.UI;
+using Gameplay;
 
-public class GamePlayPanel : ShowHidable
+public class GamePlayPanel : MonoBehaviour
 {
     [SerializeField] private Button _undoBtn;
     [SerializeField] private Text _lvlTxt;
@@ -36,27 +32,16 @@ public class GamePlayPanel : ShowHidable
     {
    
 
-        SharedUIManager.PopUpPanel.ShowAsConfirmation("Skip","Watch Video to skip this level", success =>
-        {
-            if(!success)
-                return;
-
-           
                 ResourceManager.CompleteLevel(LevelManager.Instance.GameMode, LevelManager.Instance.Level.no);
                 UIManager.Instance.LoadNextLevel();
           
-        });
     }
 
     public void OnClickMenu()
     {
-        SharedUIManager.PopUpPanel.ShowAsConfirmation("Exit?","Are you sure want to exit the game?", success =>
-        {
-            if(!success)
-                return;
+       
 
             GameManager.LoadScene("MainMenu");
-        });
     }
 
     private void Update()

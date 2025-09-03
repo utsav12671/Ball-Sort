@@ -1,8 +1,4 @@
-﻿// /*
-// Created by Darsan
-// */
-
-using UnityEngine;
+﻿using UnityEngine;
 
 public static class VectorExtensions
 {

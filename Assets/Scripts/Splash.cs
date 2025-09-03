@@ -1,21 +1,12 @@
-﻿// /*
-// Created by Darsan
-// */
-
-using System;
-using System.Collections;
-using MyGame;
+﻿using System.Collections;
 using UnityEngine;
 
 public class Splash : MonoBehaviour
 {
     private IEnumerator Start()
     {
-        {
-            SharedUIManager.ConsentPanel.Show();
-            yield return new WaitUntil(() => !SharedUIManager.ConsentPanel.Showing);
-        }
 
+        yield return new WaitForEndOfFrame();
         GameManager.LoadScene("MainMenu");
     }
 }

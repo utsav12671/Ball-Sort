@@ -1,13 +1,10 @@
-﻿// /*
-// Created by Darsan
-// */
-
+﻿
 using System.Collections.Generic;
 using System.Linq;
-using MyGame;
 using UnityEngine;
+using MainMenu;
 
-public class LevelsPanel : ShowHidable
+public class LevelsPanel : MonoBehaviour
 {
     [SerializeField] private LevelTileUI _levelTileUIPrefab;
     [SerializeField] private RectTransform _content;
