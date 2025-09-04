@@ -7,14 +7,14 @@ namespace Gameplay
 {
     public class LevelCompletePanel : MonoBehaviour
     {
-        [SerializeField] private Text _toastTxt;
+        [SerializeField] private TMPro.TextMeshProUGUI _toastTxt;
         [SerializeField] private List<string> _toasts = new List<string>();
 
-        protected void OnShowCompleted()
+        private void OnEnable()
         {
             _toastTxt.text = _toasts.GetRandom();
             _toastTxt.gameObject.SetActive(true);
-
+            
         }
 
 

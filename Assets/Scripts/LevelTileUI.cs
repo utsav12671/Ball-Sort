@@ -7,10 +7,12 @@ public class LevelTileUI : MonoBehaviour,IPointerClickHandler
 {
     public event Action<LevelTileUI> Clicked; 
 
-    [SerializeField] private Text _txt;
+    [SerializeField] private TMPro.TextMeshProUGUI _txt;
     [SerializeField] private GameObject _completeMark;
     [SerializeField] private GameObject _lockMark;
     [SerializeField] private Image _fillImg;
+    [SerializeField] Sprite _UnlockSprite;
+    [SerializeField] Sprite _lockSprite;
 
     private ViewModel _mViewModel;
 
@@ -21,7 +23,9 @@ public class LevelTileUI : MonoBehaviour,IPointerClickHandler
         set
         {
             _txt.text = value.Level.no.ToString();
-            _fillImg.color = _fillImg.color.WithAlpha(value.Locked ? 0 : 1);
+            _txt.gameObject.SetActive(!value.Locked);
+            _fillImg.sprite = value.Locked ? _lockSprite : _UnlockSprite;
+            //_fillImg.color = _fillImg.color.WithAlpha(value.Locked ? 0 : 1);
             _completeMark.SetActive(value.Completed);
             _lockMark.SetActive(value.Locked);
             _mViewModel = value;

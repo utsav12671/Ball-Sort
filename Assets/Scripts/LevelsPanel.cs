@@ -9,6 +9,8 @@ public class LevelsPanel : MonoBehaviour
     [SerializeField] private LevelTileUI _levelTileUIPrefab;
     [SerializeField] private RectTransform _content;
 
+
+
     public GameMode GameMode
     {
         get => _gameMode;
