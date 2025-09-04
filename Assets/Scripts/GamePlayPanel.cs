@@ -7,7 +7,7 @@ using Gameplay;
 public class GamePlayPanel : MonoBehaviour
 {
     [SerializeField] private Button _undoBtn;
-    [SerializeField] private Text _lvlTxt;
+    [SerializeField] private TMPro.TextMeshProUGUI _lvlTxt;
 
     private void Start()
     {

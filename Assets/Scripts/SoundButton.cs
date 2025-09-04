@@ -6,11 +6,10 @@ using UnityEngine.UI;
 public class SoundButton:MonoBehaviour,IPointerClickHandler
 {
     [SerializeField] private Sprite[] _soundEnableAndDisableSprites;
-    private Button _button;
+  [SerializeField]  private Image _button;
 
     private void Awake()
     {
-        _button = GetComponent<Button>();
         AudioManagerOnSoundStateChanged(AudioManager.IsSoundEnable);
     }
 
@@ -26,7 +25,7 @@ public class SoundButton:MonoBehaviour,IPointerClickHandler
 
     private void AudioManagerOnSoundStateChanged(bool b)
     {
-        _button.image.sprite = _soundEnableAndDisableSprites[b ? 0 : 1];
+        _button.sprite = _soundEnableAndDisableSprites[b ? 0 : 1];
     }
 
 
